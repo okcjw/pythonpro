@@ -1,5 +1,5 @@
 import random
-number = random.randrange(1,101)
+number = random.randrange(1, 101)
 print("I'm thinking of a number between 1 and 100.")
 print("Try to guess it in as few attempts as possible")
 tries = 0
