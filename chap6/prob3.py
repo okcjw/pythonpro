@@ -1,4 +1,4 @@
-geek_terms = {"uninstalled": "Uninstalled means being fired. Especially popular during the dot-bomb era.",}
+geek_terms = {"uninstalled": "Uninstalled means being fired. Especially popular during the dot-bomb era."}
 
 while True:
     print("Geek Translator")
