@@ -37,6 +37,6 @@ print("Your inventory is now:")
 print(inventory)
 print("")
 
-user_input = input("Press the enter key to exit")
+user_input = input("Press the enter key to exit.")
 while user_input != "":
-    print("Press the enter key to exit")
+    print("Press the enter key to exit.")

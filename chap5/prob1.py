@@ -1,16 +1,21 @@
 my_inventory = ()
 
+def wait_for_enter():
+        user_input = input("Press the enter key to continue.")
+        while user_input != "":
+            print("Press the enter key to continue.")
+
 print("Your items:")
 for i in range(4):
     user_input = input()
     my_inventory += (user_input,)
 
 print("")
-print("Press the enter key to continue.")
+wait_for_enter()
 print("You have", len(my_inventory), "items in your possession.")
 
 print("")
-print("Press the enter key to continue.")
+wait_for_enter()
 if "healing potion" in my_inventory:
     print("You will live to fight another day.")
 
@@ -25,7 +30,7 @@ print("inventory[", slice_begin, ":", slice_end, "]", end = "\t\t")
 print(my_inventory[slice_begin:slice_end])
 
 print("")
-print("Press the enter key to continue.")
+wait_for_enter()
 chest = ('gold', 'gems')
 print("You find a chest. It contains:")
 print(chest)
@@ -36,4 +41,6 @@ print("Your inventory is now:")
 print(my_inventory)
 
 print("")
-print("Press the enter key to exit")
+user_input = input("Press the enter key to exit.")
+while user_input != "":
+    print("Press the enter key to exit.")
