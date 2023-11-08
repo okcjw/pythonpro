@@ -1,5 +1,5 @@
 print("Opening and closing the file.")
-text = open("text.txt", "r")
+text = open("read_it.txt", "r")
 
 print("\nReading characters from the file.")
 print(text.read(1))
