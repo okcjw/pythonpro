@@ -1,0 +1,66 @@
+An Episode You Can't Refuse
+-------------------
+General Knowledge
+Let's say you turn state's evidence and need to "get on the lamb." If you wait /too long, what will happen?
+You'll end up on the sheep
+You'll end up on the cow
+You'll end up on the goat
+You'll end up on the emu
+1
+You'll be on the run, possibly captured by authorities.
+
+World Capitals
+-------------------
+Science
+What is the capital of France?
+Paris
+Berlin
+Madrid
+Rome
+1
+Paris is the capital of France.
+
+Python Basics
+-------------------
+Programming
+Which of the following is a data type in Python?
+Integer
+String
+Boolean
+All of the above
+4
+In Python, integers, strings, and booleans are all valid data types.
+
+World Capitals
+-------------------
+Geography
+What is the capital of Japan?
+Beijing
+Tokyo
+Seoul
+Bangkok
+2
+Tokyo is the capital of Japan.
+
+Famous Artists
+-------------------
+Art
+Who painted the Mona Lisa?
+Vincent van Gogh
+Leonardo da Vinci
+Pablo Picasso
+Michelangelo
+2
+The Mona Lisa was painted by Leonardo da Vinci.
+
+Science Facts
+-------------------
+Physics
+What is the speed of light?
+299,792 kilometers per second
+150,000 kilometers per second
+500,000 kilometers per second
+1,000,000 kilometers per second
+1
+The speed of light is approximately 299,792 kilometers per second.
+
