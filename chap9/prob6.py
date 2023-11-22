@@ -1,37 +1,36 @@
-class Critter:
+class Critter(object):
     def __init__(self, name):
         print("A new critter has been born!")
         self.__name = name
 
-    def set_name(self, new_name):
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
         if new_name == "":
             print("A critter's name can't be the empty string.")
         else:
             self.__name = new_name
             print("Name change successful.")
 
-    def get_name(self):
-        return self.__name
+    def talk(self):
+        print("\nHi, I'm", self.name)
 
-    name = property(get_name, set_name)
+critter = Critter("Poochie")
 
-crit = Critter("Poochie")
+critter.talk()
 
-print("\nHi, I'm", crit.get_name())
-
-print("\nMy critter's name is:", crit.get_name())
+print("\nMy critter's name is:", critter.name)
 
 print("\nAttempting to change my critter's name.")
-
-crit.set_name("")
+critter.name = ""
 
 print("\nAttempting to change my critter's name again.")
+critter.name = "Randolph"
 
-crit.set_name("Randolph")
+critter.talk()
 
-print("\nHi, I'm", crit.get_name())
-
-print()
-
-input("Press the enter key to exit.")
+input("\nPress the enter key to exit.")
 

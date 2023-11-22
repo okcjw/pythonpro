@@ -1,9 +1,9 @@
 class Critter:
     def __init__(self, name):
+        print("A new critter has been born!")
         self.name = name
     
     def talk(self):
-        print("A new critter has been born!")
         print("Hi. I'm", self.name, "\n")
     
     def __str__(self):

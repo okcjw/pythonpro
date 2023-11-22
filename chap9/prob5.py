@@ -1,8 +1,8 @@
 class Critter:
     def __init__(self, name, mood):
+        print("A new critter has been born!")
         self.name = name   # public attribute
         self.__mood = mood # private attribute
-        print("A new critter has been born!")
 
     def talk(self):
         print("\nI'm", self.name)
