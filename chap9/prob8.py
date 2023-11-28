@@ -1,8 +1,10 @@
 class Critter(object):
-    def __init__(self, name, hunger=0, boredom=0):
+    """A virtual pet"""
+    def __init__(self, name, hunger=0, boredom=0, level=0):
         self.name = name
         self.hunger = hunger
         self.boredom = boredom
+        self.level = level
 
     def __pass_time(self):
         self.hunger += 1
@@ -21,15 +23,12 @@ class Critter(object):
             m = "mad"
         return m
 
-    def talk(self):
-        print("I'm", self.name, "and I feel", self.mood, "now.\n")
-        self.__pass_time()
-
-    def eat(self, food=4):
-        print("Brruppp. Thank you.")
-        self.hunger -= food
+    def feed(self, food):
+        print(f"{food.name}. Thank you.")
+        self.hunger -= food.get_level()
         if self.hunger < 0:
             self.hunger = 0
+        self.level += food.get_critter_level()
         self.__pass_time()
 
     def play(self, fun=4):
@@ -39,40 +38,71 @@ class Critter(object):
             self.boredom = 0
         self.__pass_time()
 
+    def talk(self):
+        print("I'm", self.name, "and I feel", self.mood, "now.\n")
+        self.__pass_time()
+
+
+class Food(object):
+    """Food menu"""
+    def __init__(self, name, level, critter_level):
+        self.name = name
+        self.level = level
+        self.critter_level = critter_level
+
+    def get_level(self):
+        return self.level
+
+    def get_critter_level(self):
+        return self.critter_level
+
 
 def main():
-    crit_name = input("What is your critter’s name?: ")
+    crit_name = input("What is your critter's name?: ")
     crit = Critter(crit_name)
+
+    food_menu = [
+        Food("Dry Food", level=3, critter_level=2),
+        Food("Meat", level=5, critter_level=3),
+        Food("Vegetables", level=2, critter_level=1)
+    ]
+
     choice = None
     while choice != "0":
         print(
             """
-        Critter Caretaker
+            Critter Caretaker
 
-        0 - Quit
-        1 - Listen to your critter
-        2 - Feed your critter
-        3 - Play with your critter
-        """
+            0 - Quit
+            1 - Listen to your critter
+            2 - Feed your critter
+            3 - Play with your critter
+            """
         )
         choice = input("Choice: ")
         print()
-        # exit
+
         if choice == "0":
             print("Good-bye.")
-        # listen to your critter
         elif choice == "1":
             crit.talk()
-        # feed your critter
         elif choice == "2":
-            crit.eat()
-        # play with your critter
+            print("Food Menu:")
+            for i, food in enumerate(food_menu, 1):
+                print(f"{i}. {food.name}")
+            try:
+                food_choice = int(input("Choose a food item (1-3): "))
+                if 1 <= food_choice <= 3:
+                    crit.feed(food_menu[food_choice - 1])
+                else:
+                    print("Invalid food choice.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
         elif choice == "3":
             crit.play()
-        # some unknown choice
         else:
             print("\nSorry,", choice, "isn't a valid choice.")
 
-if __name__ == "__main__":
-    main()
 
+main()
+input("\n\nPress the enter key to exit.")
