@@ -32,19 +32,19 @@ class Critter(object):
         self.mood -= 1
 
     def feed(self, food):
-        print("\nBrrupp."..., food.name)
+        print("\nBrrupp...")
         food.setCritterLevel(self)
 
     def play(self):
         print("Wheee!!!")
-        self.mood += 1
+        self.mood += 5
         
 def main():
     crit_name = input("What do you want to name your critter?: ")
     crit = Critter(crit_name)
-    food1 = Food("Feed", 1)
+    food1 = Food("Feed", 2)
     food2 = Food("Meat", 3)
-    food3 = Food("Gum", 5)
+    food3 = Food("Gum", 4)
     choice = None
     while choice != "0":
         print("""
@@ -67,9 +67,9 @@ def main():
         elif choice == "2":
             food_choice = input("""\tWhat food do you want to feed?
 
-        1 - feedsstuff
-        2 - meet
-        3 - cookie\n\nChoice: """)      
+        1 - Feed
+        2 - Meat
+        3 - Gum\n\nChoice: """)      
             if food_choice == "1":
                 crit.feed(food1)
             if food_choice == "2":
