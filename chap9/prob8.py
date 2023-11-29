@@ -25,10 +25,10 @@ class Critter(object):
 
     def feed(self, food):
         print(f"{food.name}. Thank you.")
-        self.hunger -= food.get_level()
+        self.hunger -= food.getLevel()
         if self.hunger < 0:
             self.hunger = 0
-        self.level += food.get_critter_level()
+        self.level += food.getCritterLevel()
         self.__pass_time()
 
     def play(self, fun=4):
@@ -50,10 +50,10 @@ class Food(object):
         self.level = level
         self.critter_level = critter_level
 
-    def get_level(self):
+    def getLevel(self):
         return self.level
 
-    def get_critter_level(self):
+    def getCritterLevel(self):
         return self.critter_level
 
 
@@ -62,9 +62,9 @@ def main():
     crit = Critter(crit_name)
 
     food_menu = [
-        Food("Dry Food", level=3, critter_level=2),
+        Food("Feed", level=3, critter_level=2),
         Food("Meat", level=5, critter_level=3),
-        Food("Vegetables", level=2, critter_level=1)
+        Food("Gum", level=2, critter_level=1)
     ]
 
     choice = None
